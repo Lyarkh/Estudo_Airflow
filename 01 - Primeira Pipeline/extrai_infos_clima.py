@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from pathlib import Path
 from os.path import join
 from datetime import datetime, timedelta
 
@@ -17,4 +18,11 @@ key = 'S2288F34GLCJJ42JH4WAYS4DS'
 
 URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/' \
     f'services/timeline/{city}/{data_inicio}/{data_fim}?' \
-    f'unitGroup=metric&include=days?key={key}&contentType=csv'
+    f'unitGroup=metric&include=days&key={key}&contentType=csv'
+
+dados = pd.read_csv(URL)
+
+dir_data_path = os.path.abspath(
+    f'01 - Primeira Pipeline/dados/semana_{data_inicio}')
+dir_path = Path(dir_data_path)
+dir_path.mkdir(parents=True, exist_ok=True)
