@@ -14,7 +14,6 @@ O Airflow organiza fluxos de trabalho em DAGs, que são basicamente pipelines de
 - **TAsk**: unidade mais básica de uma *DAG*
 - **Operator**: encapsula a lógica para fazer uma unidade de trabalho (task)
 
-
 ## Principais componentes da arquitetura do Airflow
 
 - **Webserver**: apresenta uma interface de usuário que nos permite inspecionar, acionar e acompanhar o comportamento dos DAGs e suas tarefas
