@@ -29,3 +29,9 @@ dir_data_path = os.path.abspath(
 dir_path = Path(dir_data_path)
 dir_path.mkdir(parents=True, exist_ok=True)
 
+# salvando dados
+dados.to_csv(dir_path / 'dados_brutos.csv', index=False)
+dados[['datetime', 'tempmin', 'temp', 'tempmax']].\
+    to_csv(dir_path / 'temperaturas.csv', index=False)
+dados[['datetime', 'description', 'icon']].\
+    to_csv(dir_path / 'condicoes.csv', index=False)
