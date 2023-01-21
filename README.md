@@ -6,7 +6,6 @@ Repositório onde se encontrará estudos da ferramenta apache Airflow.
 - Criação de DAGs.
 - Entendimento de ETL utilizando python.
 
-
 ## Principais conceitos do Airflow
 
 O Airflow organiza fluxos de trabalho em DAGs, que são basicamente pipelines de addos definidos utilizando a linguagem python.
