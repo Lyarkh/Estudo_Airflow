@@ -18,5 +18,5 @@ with DAG(
         bash_command=f'mkdir -p "{os.path.abspath("pasta_teste")}"'
     )
 
-    tarefa_1 >> [tarefa_2, tarefa_3]
-    tarefa_3 >> tarefa_4
+    tarefa_1 >> [tarefa_2, tarefa_3]     # type: ignore
+    tarefa_3 >> tarefa_4                 # type: ignore
