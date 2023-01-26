@@ -21,3 +21,19 @@ O Airflow organiza fluxos de trabalho em DAGs, que são basicamente pipelines de
 - **Scheduler**: lida com o acionamento dos fluxos de travalh(agendador)
 - **Banco de dados**: usado pelo agendador, executor e webserver para armazenar os metadados e status do DAG e suas tarefas
 - **Executor**: lida com as tarefas em execução. o Airflow possui vários executores, mais apenas um é utilizado por vez
+
+## Criando ambiente virtual e ativando
+
+`PowerShell`:
+
+```bash
+  python -m venv venv
+  venv/Scripts/Activate.ps1
+```
+
+`Bash`:
+
+```bash
+  python3 -m venv venv
+  source venv/bin/activate
+```
