@@ -15,7 +15,8 @@ with DAG(
     tarefa_3 = EmptyOperator(task_id='tarefa_3')
     tarefa_4 = BashOperator(
         task_id='cria_pasta',
-        bash_command=f'mkdir -p "{os.path.abspath("pasta_{{data_interval_end}}")}"'
+        bash_command='mkdir '
+        f'-p "{os.path.abspath("pasta_{{data_interval_end}}")}"'
     )
 
     tarefa_1 >> [tarefa_2, tarefa_3]     # type: ignore
