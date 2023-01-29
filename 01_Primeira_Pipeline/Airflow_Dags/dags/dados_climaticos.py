@@ -49,4 +49,4 @@ with DAG(
         op_kwargs={'data_interval_end': "{{data_interval_end.strftime('%Y-%m-%d')}}"}
     )
 
-    tarefa_1 >> tarefa_2
+    tarefa_1 >> tarefa_2    #type: ignore
