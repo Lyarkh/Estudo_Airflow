@@ -19,7 +19,8 @@ class ExtraiInfosClima:
         city = 'Boston'
         key = 'S2288F34GLCJJ42JH4WAYS4DS'
 
-        URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/' \
+        URL = 'https://weather.visualcrossing.com/'\
+            'VisualCrossingWebServices/rest/' \
             f'services/timeline/{city}/{self.data_inicio}/{self.data_fim}?' \
             f'unitGroup=metric&include=days&key={key}&contentType=csv'
 
