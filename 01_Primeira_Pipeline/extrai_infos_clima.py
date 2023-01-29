@@ -29,7 +29,6 @@ class ExtraiInfosClima:
         dir_data_path = os.path.abspath(
             f'01 - Primeira Pipeline/dados/semana_{self.data_inicio}')
         dir_path = Path(dir_data_path)
-        dir_path.mkdir(parents=True, exist_ok=True)
 
         # salvando dados
         dados.to_csv(dir_path / 'dados_brutos.csv', index=False)
