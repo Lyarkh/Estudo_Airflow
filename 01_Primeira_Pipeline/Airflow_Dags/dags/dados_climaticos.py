@@ -17,14 +17,16 @@ with DAG(
     tarefa_1 = BashOperator(
         task_id='cria_pasta',
         bash_command='mkdir '
-        f"""-p "{os.path.abspath("dados/semana_{{data_interval_end.strftime('%Y-%m-%d')}}")}"""
+        f"""-p {os.path.abspath(
+            "dados/semana_{{data_interval_end.strftime('%Y-%m-%d')}}")}"""
     )
 
     def extrai_dados(data_interval_end):
         city = 'Boston'
         key = 'S2288F34GLCJJ42JH4WAYS4DS'
 
-        URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/' \
+        URL = 'https://weather.visualcrossing.com/'\
+            'VisualCrossingWebServices/rest/' \
             f'services/timeline/{city}/{data_interval_end}/'\
             f'{ds_add(data_interval_end, 7)}?' \
             f'unitGroup=metric&include=days&key={key}&contentType=csv'
@@ -32,8 +34,7 @@ with DAG(
         dados = pd.read_csv(URL)
 
         # Criação da pasta da salvar os dados buscados pela API
-        dir_data_path = os.path.abspath(
-            os.path.abspath(f"dados/semana_{data_interval_end}"))
+        dir_data_path = os.path.abspath(f"dados/semana_{data_interval_end}")
         dir_path = Path(dir_data_path)
 
         # salvando dados
@@ -46,7 +47,8 @@ with DAG(
     tarefa_2 = PythonOperator(
         task_id='extrai_dados',
         python_callable=extrai_dados,
-        op_kwargs={'data_interval_end': "{{data_interval_end.strftime('%Y-%m-%d')}}"}
+        op_kwargs={
+            'data_interval_end': "{{data_interval_end.strftime('%Y-%m-%d')}}"}
     )
 
-    tarefa_1 >> tarefa_2    #type: ignore
+    tarefa_1 >> tarefa_2    # type: ignore
