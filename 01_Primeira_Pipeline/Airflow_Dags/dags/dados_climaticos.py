@@ -48,3 +48,5 @@ with DAG(
         python_callable=extrai_dados,
         op_kwargs={'data_interval_end': "{{data_interval_end.strftime('%Y-%m-%d')}}"}
     )
+
+    tarefa_1 >> tarefa_2
