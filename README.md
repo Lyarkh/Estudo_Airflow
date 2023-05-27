@@ -1,6 +1,7 @@
 # Estudos Formação Airflow
 
 ![last commit](https://img/shields/github/last-commit/Lyarkh/Estudo_Airflow)
+![python version](https://img/shields.io/badge/python-3.9%20%7C%203.10-green)
 
 Repositório onde se encontrará estudos da ferramenta apache Airflow.
 
