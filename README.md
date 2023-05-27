@@ -1,5 +1,7 @@
 # Estudos Formação Airflow
 
+![last commit](https://img/shields/github/last-commit/Lyarkh/Estudo_Airflow)
+
 Repositório onde se encontrará estudos da ferramenta apache Airflow.
 
 - Criação e monitoramento de Pipelines.
